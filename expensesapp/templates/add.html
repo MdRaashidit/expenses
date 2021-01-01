@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Expenses</title>
+</head>
+<link rel="stylesheet" type="text/css" href="{% static 'add.css' %}">
+<body>
+<div class="loginbox">
+    <h1>Add Your Expenses</h1>
+    <form method="post">
+        {% csrf_token %}
+        <input type="date" name="formdate" placeholder="datename" required></br></br>
+        <input type="text" name="forminvest" placeholder="Item" required></br></br>
+        <input type="number" name="formamount" placeholder="Rate" required></br></br>
+        <input type="text" name="formplace" placeholder="Category" required></br></br>
+        <input type="text" name="formshop" placeholder="Vendor" required></br></br>
+        
+        
+        
+        
+        <button type="submit">Save</button>
+        <button type="button"><a href='/'>Back</a></button>
+    </form>
+</div>
+<footer style="text-align: center;">Designed By : RAASHID</footer>
+
+</body>
+</html>

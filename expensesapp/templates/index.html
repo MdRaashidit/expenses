@@ -1,0 +1,65 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>expenses index</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'tablestyle.css' %}">
+</head>
+<body>
+    <a href="{% url 'add_expenses' %}">Add Your Daily Expenses</a>&nbsp&nbsp&nbsp
+    <a href="{% url 'logout' %}">Logout</a>
+
+<table>
+  <tr>
+    <th>Date</th>
+    <th>Item</th>
+    <th>Rate</th>
+    <th>Category</th>
+    <th>Vendor</th>
+    
+  </tr>
+  {% for p in keypassword %}
+  <tr>
+    <td>{{p.dbdate}}</td>
+    <td>{{p.dbinvest}}</td>
+    {% comment %} <td>{{p.dbamount}}</td> {% endcomment %}
+    {% if p.dbamount <= 100 %}
+    <td style="color:red; font-weight:700;">{{p.dbamount}} </td>
+    {% endif %}
+   {% if p.dbamount > 100 %}
+    <td style="color:darkred; font-weight:bolder; ">{{p.dbamount}} </td>
+    {% endif %}
+    <td>{{p.dbplace}}</td>
+    <td>{{p.dbshopname}}</td>
+    
+    
+  </tr>
+  {% endfor %}
+  <tr>
+   <td>
+
+    </td>
+    <td style="text-align: right;">
+    Total
+    </td>
+    <td style="color:green; font-weight:bolder; ">
+  
+    {{alltotal}}
+    </td>
+
+   
+    <td>
+
+    </td>
+    <td>
+
+    </td>
+  </tr>
+  </table>
+<br>
+<footer style="text-align: center; color:#022455; font-weight:bolder;">Designed By : RAASHID</footer>
+
+</body>
+</html>
