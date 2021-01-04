@@ -9,11 +9,10 @@
         <h1>Sign up </h1>
         <form action ='/signup' method="POST">  {% csrf_token %}
             <p>Username</p>
-            <input type="text" name="username" placeholder="Enter Username">
-            <p>Password</p>
-            <input type="password" name="password" placeholder="Enter Password">
+            <input type="text" name="username" required placeholder="Enter Username">
+            <p>Password (6 characters minimum):</p>
+            <input type="password" name="password"  minlength="6" required placeholder="Enter Password">
             <button type="submit">Sign up</button>
-            
             
        
         </form>

@@ -1,23 +1,26 @@
 {% load static %}
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>expenses index</title>
+  <head>
+   
+    <title>Your Expenses</title>
     <link rel="stylesheet" type="text/css" href="{% static 'tablestyle.css' %}">
-</head>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500&display=swap" rel="stylesheet">
+    <link rel="icon" href="{% static '/images/raashid.png' %}" type="image/png" alt="My image">
+  </head>
+
 <body>
     <a href="{% url 'add_expenses' %}">Add Your Daily Expenses</a>&nbsp&nbsp&nbsp
     <a href="{% url 'logout' %}">Logout</a>
 
 <table>
   <tr>
-    <th>Date</th>
-    <th>Item</th>
-    <th>Rate</th>
+    <th>DATE</th>
+    <th>ITEM</th>
+    <th>RATE</th>
     <th>Category</th>
-    <th>Vendor</th>
+    <th>VENDOR</th>
     
   </tr>
   {% for p in keypassword %}
@@ -59,7 +62,7 @@
   </tr>
   </table>
 <br>
-<footer style="text-align: center; color:#022455; font-weight:bolder;">Designed By : RAASHID</footer>
-
+<footer style="text-align: center; color:#022455;font-family: 'Caveat', cursive;
+font-weight:bolder;">Designed By : RAASHID</footer>
 </body>
 </html>
